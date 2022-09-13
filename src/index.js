@@ -1,6 +1,6 @@
-import { compile } from 'coffeescript'
-import { createFilter } from '@rollup/pluginutils'
-import { extname } from 'path'
+const { compile } = require('coffeescript')
+const { createFilter } = require('@rollup/pluginutils')
+const { extname } = require('path')
 
 const DEFAULTS = {
   bare: true,
@@ -20,7 +20,7 @@ function buildOptions(ext, base) {
   return lit?.includes(ext) ? { ...base, literate: true } : base
 }
 
-function grindCoffee(options) {
+function grind(options) {
   options = { ...DEFAULTS, ...options }
   const { exclude, extensions, include } = options
   const filter = createFilter(include, exclude)
@@ -37,4 +37,4 @@ function grindCoffee(options) {
   return { transform }
 }
 
-export default grindCoffee
+module.exports = grind

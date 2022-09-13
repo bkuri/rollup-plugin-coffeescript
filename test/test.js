@@ -1,13 +1,11 @@
-import { compile } from 'coffeescript'
-import { dirname } from 'path'
-import { equal, ok } from 'assert'
-import { fileURLToPath } from 'url'
-import { readFileSync } from 'fs'
-import { rollup } from 'rollup'
+const { compile } = require('coffeescript')
+const { equal, ok } = require('assert')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const { readFileSync } = require('fs')
+const { rollup } = require('rollup')
 
-import coffee from '../index.js'
-import commonjs from '@rollup/plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
+const coffee = require('../src/index.js')
+const commonjs = require('@rollup/plugin-commonjs')
 
 const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'
@@ -21,8 +19,8 @@ function verify ({ output }, result=RESULT) {
   ok(code.includes(result))
 }
 
-// change current path to samples directory
-process.chdir(`${ dirname(fileURLToPath(import.meta.url)) }/sample`)
+// change current path
+process.chdir('test/sample')
 
 describe('@rollup/plugin-coffeescript', function() {
   this.timeout(5000)

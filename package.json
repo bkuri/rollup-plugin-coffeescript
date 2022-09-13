@@ -6,7 +6,7 @@
   "main": "index.js",
   "name": "@rollup/plugin-coffeescript",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },

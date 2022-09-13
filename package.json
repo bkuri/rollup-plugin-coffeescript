@@ -10,11 +10,13 @@
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },
+  "dependencies": {
+    "coffeescript": "^2.7.0"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/pluginutils": "^4.2.1",
-    "coffeescript": "^2.7.0",
     "mocha": "^10.0.0",
     "rollup": "^2.79.0"
   },

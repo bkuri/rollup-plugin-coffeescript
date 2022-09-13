@@ -35,7 +35,7 @@
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",
-    "rollup": "^1.20.0 || ^2.0.0"
+    "rollup": "^2.5.0"
   },
   "publishConfig": {
     "access": "public"

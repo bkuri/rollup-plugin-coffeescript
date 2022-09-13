@@ -1,111 +1,73 @@
-import assert from 'assert';
-import * as rollup from 'rollup';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import coffeePlugin from '..';
-import coffee from 'coffeescript';
-import fs from 'fs';
+import { compile } from 'coffeescript'
+import { dirname } from 'path'
+import { equal, ok } from 'assert'
+import { fileURLToPath } from 'url'
+import { readFileSync } from 'fs'
+import { rollup } from 'rollup'
 
-process.chdir(__dirname);
+import coffee from '../index.js'
+import commonjs from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
 
-describe('rollup-plugin-coffeescript', function() {
-  this.timeout(5000);
+const OPTIONS = { format: 'es' }
+const RESULT = 'answer = 42'
+
+const bundle = ({ generate }) => generate(OPTIONS)
+const extensions = [ '.coffee', '.js' ]
+const test = (input, ...plugins) => rollup({ input, plugins }).then(bundle).then(verify)
+
+function verify ({ output }, result=RESULT) {
+  const { code } = output[0]
+  ok(code.includes(result))
+}
+
+// change current path to samples directory
+process.chdir(`${ dirname(fileURLToPath(import.meta.url)) }/sample`)
+
+describe('@rollup/plugin-coffeescript', function() {
+  this.timeout(5000)
 
   it('runs code through coffeescript', () => {
-    const entry = 'sample/basic/main.coffee';
-    const source = fs.readFileSync(entry).toString();
+    const input = 'basic/main.coffee'
+    const source = readFileSync(input).toString()
 
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin()]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        const coffeeOutput = coffee.compile(source, { bare: true });
-        assert.equal(generated.code.trim(), coffeeOutput.trim());
-      });
-  });
+    return rollup({ input, plugins: [ coffee() ]})
+      .then(bundle)
+      .then(({ output }) => {
+        const { code } = output[0]
+        equal(code.trim(), compile(source, { bare: true }).trim())
+      })
+  })
 
-  it('only runs code with defined extensions through coffee script', () => {
-    const entry = 'sample/invalid-coffee.js';
-
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin(), nodeResolve({ extensions: ['.coffee', '.js'] })]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        assert.ok(generated.code.indexOf('answer = 42') !== -1);
-      });
-  });
+  it('only runs code with defined extensions through coffeescript', () => {
+    return test('invalid-coffee.js', coffee(), nodeResolve({ extensions }))
+  })
 
   it('works with requires when used with commonjs plugin', () => {
-    const entry = 'sample/import-class/main.coffee';
+    const input = 'import-class/main.coffee'
 
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin(), commonjs({ extensions: ['.coffee']})]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        const code = generated.code;
-        assert.ok(code.indexOf('A$1 = class A') !== -1);
-      });
-  });
-
-  it('works with babel plugin', () => {
-    const entry = 'sample/babel/index.coffee';
-
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin(), babel()]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        const code = generated.code;
-        assert.ok(code.indexOf('regeneratorRuntime.mark(function fibonacci') !== -1);
-      });
-  });
+    return rollup({ input, plugins: [ coffee(), commonjs({ extensions }) ]})
+      .then(bundle)
+      .then(result => verify(result, 'A$1 = class A'))
+  })
 
   it('allows overriding default options', () => {
-    const entry = 'sample/litcoffee/example.coffee.md';
-
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin({ extensions: ['.md' ], literate: true })]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        const code = generated.code;
-        assert.ok(generated.code.indexOf('answer = 42') !== -1);
-      });
-  });
+    const options = { extensions: [ '.md' ], literate: true }
+    return test('litcoffee/example.coffee.md', coffee(options))
+  })
 
   it('compiles .litcoffee', () => {
-    const entry = 'sample/litcoffee/main.litcoffee';
-
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin({})]
-    })
-      .then((bundle) => bundle.generate({ format: 'es' }))
-      .then((generated) => {
-        const code = generated.code;
-        assert.ok(generated.code.indexOf('answer = 42') !== -1);
-      });
-  });
+    return test('litcoffee/main.litcoffee', coffee({}))
+  })
 
   it('passes proper source map to rollup', () => {
-    const entry = 'sample/import-class/main.coffee';
+    const input = 'import-class/main.coffee'
 
-    return rollup.rollup({
-      input: entry,
-      plugins: [coffeePlugin(), commonjs({ extensions: ['.coffee']})]
-    })
-      .then((bundle) => bundle.generate({ sourcemap: true, format: 'es' }))
-      .then((generated) => {
-        assert.ok(generated.map.sources.indexOf(entry) === -1);
-      });
-  });
-});
+    return rollup({ input, plugins: [ coffee() ]})
+      .then(({ generate }) => generate({ ...OPTIONS, sourcemap: true }))
+      .then(({ output }) => {
+        const { map } = output[0]
+        ok(map.sources.includes(input))
+      })
+  })
+})

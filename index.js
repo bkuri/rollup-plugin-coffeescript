@@ -1,48 +1,40 @@
-var coffeescript = require('coffeescript');
-var createFilter = require('rollup-pluginutils').createFilter;
-var objectAssign = require('object-assign');
-var extname = require('path').extname;
+import { compile } from 'coffeescript'
+import { createFilter } from '@rollup/pluginutils'
+import { extname } from 'path'
 
-function compileOptions(id, options, literateExtensions) {
-  if (literateExtensions.indexOf(extname(id) === -1)) {
-    return options;
-  } else {
-    return objectAssign({}, options, { literate: true });
-  }
+const DEFAULTS = {
+  bare: true,
+  extensions: [ '.coffee', '.litcoffee' ],
+  literateExtensions: [ '.litcoffee', '.md' ],
+  sourceMap: true
 }
 
-function sourceMap(output) {
-  if (output.v3SourceMap) {
-    return JSON.parse(output.v3SourceMap);
-  }
+function buildOptions(ext, base) {
+  const { literateExtensions: lit } = base
+
+  delete base.exclude
+  delete base.extensions
+  delete base.include
+  delete base.literateExtensions
+
+  return lit?.includes(ext) ? { ...base, literate: true } : base
 }
 
-module.exports = function coffee(options) {
-  options = objectAssign({
-    sourceMap: true,
-    bare: true,
-    extensions: ['.coffee', '.litcoffee'],
-    literateExtensions: ['.litcoffee', '.md']
-  }, options || {});
+function grindCoffee(options) {
+  options = { ...DEFAULTS, ...options }
+  const { exclude, extensions, include } = options
+  const filter = createFilter(include, exclude)
+  
+  const transform = (coffee, id) => {
+    const ext = extname(id)
+    if (!filter(id) || !extensions.includes(ext)) return null
+    const { js: code, v3SourceMap } = compile(coffee, buildOptions(ext, options))
 
-  var filter = createFilter(options.include, options.exclude);
-  var extensions = options.extensions;
-  var literateExtensions = options.literateExtensions;
-  delete options.extensions;
-  delete options.literateExtensions;
-  delete options.include;
-  delete options.exclude;
+    if (v3SourceMap) return { code, map: JSON.parse(v3SourceMap) }
+    return { code }
+  }
+  
+  return { transform }
+}
 
-  return {
-    transform: function(code, id) {
-      if (!filter(id)) return null;
-      if (extensions.indexOf(extname(id)) === -1) return null;
-
-      var output = coffeescript.compile(code, compileOptions(id, options, literateExtensions));
-      return {
-        code: output.js,
-        map: sourceMap(output)
-      };
-    }
-  };
-};
+export default grindCoffee

@@ -6,7 +6,7 @@
   "main": "dist/rollup-plugin-coffeescript.cjs.js",
   "module": "dist/rollup-plugin-coffeescript.es.js",
   "name": "@rollup/plugin-coffeescript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^23.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
-    "del-cli":"^5.0.0",
+    "del-cli": "^5.0.0",
     "mocha": "^10.1.0",
     "rollup": "^3.2.1"
   },

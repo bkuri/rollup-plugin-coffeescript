@@ -7,18 +7,18 @@ specifiers:
   coffeescript: ^2.7.0
   del-cli: ^5.0.0
   mocha: ^10.1.0
-  rollup: ^2.79.1
+  rollup: ^3.2.1
 
 dependencies:
-  '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.1_rollup@2.79.1
+  '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.1_rollup@3.2.1
   coffeescript: 2.7.0
 
 devDependencies:
-  '@rollup/plugin-commonjs': registry.npmjs.org/@rollup/plugin-commonjs/23.0.0_rollup@2.79.1
-  '@rollup/plugin-node-resolve': registry.npmjs.org/@rollup/plugin-node-resolve/15.0.0_rollup@2.79.1
+  '@rollup/plugin-commonjs': registry.npmjs.org/@rollup/plugin-commonjs/23.0.0_rollup@3.2.1
+  '@rollup/plugin-node-resolve': registry.npmjs.org/@rollup/plugin-node-resolve/15.0.0_rollup@3.2.1
   del-cli: 5.0.0
   mocha: registry.npmjs.org/mocha/10.1.0
-  rollup: registry.npmjs.org/rollup/2.79.1
+  rollup: registry.npmjs.org/rollup/3.2.1
 
 packages:
 
@@ -486,7 +486,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-commonjs/23.0.0_rollup@2.79.1:
+  registry.npmjs.org/@rollup/plugin-commonjs/23.0.0_rollup@3.2.1:
     resolution: {integrity: sha512-JbrTRyDNtLQj/rhl7RFUuYXwQ2fac+33oLDAu2k++WD95zweyo28UAomLVA0JMGx4vmCa7Nw4T6k/1F6lelExg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-23.0.0.tgz}
     id: registry.npmjs.org/@rollup/plugin-commonjs/23.0.0
     name: '@rollup/plugin-commonjs'
@@ -504,10 +504,10 @@ packages:
       glob: registry.npmjs.org/glob/8.0.3
       is-reference: registry.npmjs.org/is-reference/1.2.1
       magic-string: registry.npmjs.org/magic-string/0.26.7
-      rollup: registry.npmjs.org/rollup/2.79.1
+      rollup: registry.npmjs.org/rollup/3.2.1
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-node-resolve/15.0.0_rollup@2.79.1:
+  registry.npmjs.org/@rollup/plugin-node-resolve/15.0.0_rollup@3.2.1:
     resolution: {integrity: sha512-iwJbzfTzlzDDQcGmkS7EkCKwe2kSkdBrjX87Fy/KrNjr6UNnLpod0t6X66e502LRe5JJCA4FFqrEscWPnZAkig==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.0.0.tgz}
     id: registry.npmjs.org/@rollup/plugin-node-resolve/15.0.0
     name: '@rollup/plugin-node-resolve'
@@ -525,7 +525,7 @@ packages:
       is-builtin-module: registry.npmjs.org/is-builtin-module/3.2.0
       is-module: registry.npmjs.org/is-module/1.0.0
       resolve: registry.npmjs.org/resolve/1.22.1
-      rollup: registry.npmjs.org/rollup/2.79.1
+      rollup: registry.npmjs.org/rollup/3.2.1
     dev: true
 
   registry.npmjs.org/@rollup/pluginutils/4.2.1:
@@ -538,7 +538,7 @@ packages:
       picomatch: registry.npmjs.org/picomatch/2.3.1
     dev: true
 
-  registry.npmjs.org/@rollup/pluginutils/5.0.1_rollup@2.79.1:
+  registry.npmjs.org/@rollup/pluginutils/5.0.1_rollup@3.2.1:
     resolution: {integrity: sha512-4HaCVEXXuObvcPUaUlLt4faHYHCeQOOWNj8NKFGaRSrw3ZLD0TWeAFZicV9vXjnE2nkNuaVTfTuwAnjR+6uc9A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.1.tgz}
     id: registry.npmjs.org/@rollup/pluginutils/5.0.1
     name: '@rollup/pluginutils'
@@ -553,7 +553,7 @@ packages:
       '@types/estree': registry.npmjs.org/@types/estree/1.0.0
       estree-walker: registry.npmjs.org/estree-walker/2.0.2
       picomatch: registry.npmjs.org/picomatch/2.3.1
-      rollup: registry.npmjs.org/rollup/2.79.1
+      rollup: registry.npmjs.org/rollup/3.2.1
     dev: false
 
   registry.npmjs.org/@types/estree/1.0.0:
@@ -1268,11 +1268,11 @@ packages:
       supports-preserve-symlinks-flag: registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0
     dev: true
 
-  registry.npmjs.org/rollup/2.79.1:
-    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-2.79.1.tgz}
+  registry.npmjs.org/rollup/3.2.1:
+    resolution: {integrity: sha512-Y9lBWYY7pOiWhJbwMEnLicDuTu9IqjJb5jJM88L8O5rdreJrX1j9WhriMHQSOwVYPFg1xkLoXQyDfQ2U6Ejzyg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-3.2.1.tgz}
     name: rollup
-    version: 2.79.1
-    engines: {node: '>=10.0.0'}
+    version: 3.2.1
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: registry.npmjs.org/fsevents/2.3.2

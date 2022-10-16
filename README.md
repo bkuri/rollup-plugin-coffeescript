@@ -1,6 +1,6 @@
 # rollup-plugin-coffeescript
 
-Integration between Rollup and CoffeeScript 2. Forked from [code by lautis](https://github.com/lautis/rollup-plugin-coffee-script).
+Modern rollup with coffeescript. Sourced from [lautis/rollup-plugin-coffee-script](https://github.com/lautis/rollup-plugin-coffee-script), refactored and updated libraries.
 
 ## Why?
 
@@ -22,7 +22,6 @@ import coffee from '@rollup/plugin-coffeescript'
 
 export default {
   input: 'main.coffee',
-
   plugins: [
     coffee()
   ]

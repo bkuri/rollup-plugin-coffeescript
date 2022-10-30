@@ -6,7 +6,7 @@
   "main": "dist/rollup-plugin-coffeescript.cjs.js",
   "module": "dist/rollup-plugin-coffeescript.es.js",
   "name": "@rollup/plugin-coffeescript",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },

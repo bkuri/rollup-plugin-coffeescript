@@ -1,8 +1,10 @@
 import { compile } from 'coffeescript'
 import { equal, ok } from 'assert'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { readFileSync } from 'fs'
 import { rollup } from 'rollup'
 import coffee from '../dist/rollup-plugin-coffeescript.mjs'
+import commonjs from '@rollup/plugin-commonjs'
 
 const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'

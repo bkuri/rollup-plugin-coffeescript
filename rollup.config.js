@@ -1,8 +1,8 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import pkg from './package.json';
+const resolve = require('@rollup/plugin-node-resolve')
+const commonjs = require('@rollup/plugin-commonjs')
+const pkg = require('./package.json')
 
-export default [
+module.exports = [
 	// browser-friendly UMD build
 	{
 		input: 'src/index.js',
@@ -31,4 +31,4 @@ export default [
 			{ file: pkg.module, format: 'es' }
 		]
 	}
-];
+]

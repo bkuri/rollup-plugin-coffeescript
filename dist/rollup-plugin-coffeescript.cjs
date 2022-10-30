@@ -1,6 +1,8 @@
-const { compile } = require('coffeescript');
-const { createFilter } = require('@rollup/pluginutils');
-const { extname } = require('path');
+'use strict';
+
+var coffeescript = require('coffeescript');
+var pluginutils = require('@rollup/pluginutils');
+var path = require('path');
 
 const DEFAULTS = {
   bare: true,
@@ -20,15 +22,15 @@ function buildOptions(ext, base) {
   return lit?.includes(ext) ? { ...base, literate: true } : base
 }
 
-function grind(options) {
+function coffee(options) {
   options = { ...DEFAULTS, ...options };
   const { exclude, extensions, include } = options;
-  const filter = createFilter(include, exclude);
+  const filter = pluginutils.createFilter(include, exclude);
   
   const transform = (coffee, id) => {
-    const ext = extname(id);
+    const ext = path.extname(id);
     if (!filter(id) || !extensions.includes(ext)) return null
-    const { js: code, v3SourceMap } = compile(coffee, buildOptions(ext, options));
+    const { js: code, v3SourceMap } = coffeescript.compile(coffee, buildOptions(ext, options));
 
     if (v3SourceMap) return { code, map: JSON.parse(v3SourceMap) }
     return { code }
@@ -37,4 +39,4 @@ function grind(options) {
   return { transform }
 }
 
-module.exports = grind;
+module.exports = coffee;

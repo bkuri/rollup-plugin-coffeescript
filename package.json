@@ -1,22 +1,24 @@
 {
   "author": "Bernardo Kuri",
+  "browser": "dist/rollup-plugin-coffeescript.umd.js",
   "description": "Modern CoffeeScript support for Rollup.",
   "homepage": "https://github.com/bkuri/rollup-plugin-coffeescript",
   "license": "MIT",
-  "main": "dist/rollup-plugin-coffeescript.cjs.js",
-  "module": "dist/rollup-plugin-coffeescript.es.js",
+  "main": "dist/rollup-plugin-coffeescript.cjs",
+  "module": "dist/rollup-plugin-coffeescript.mjs",
   "name": "@rollup/plugin-coffeescript",
-  "version": "0.1.4",
+  "type": "module",
+  "version": "0.3.0",
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.0.2",
     "coffeescript": "^2.7.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/pluginutils": "^5.0.2",
     "del-cli": "^5.0.0",
     "mocha": "^10.1.0",
     "rollup": "^3.2.3"
@@ -31,7 +33,7 @@
     "rollup",
     "plugin",
     "npm",
-    "modules"
+    "module"
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",

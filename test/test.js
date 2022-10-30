@@ -1,11 +1,8 @@
-const { compile } = require('coffeescript')
-const { equal, ok } = require('assert')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const { readFileSync } = require('fs')
-const { rollup } = require('rollup')
-
-const coffee = require('../src/index.js')
-const commonjs = require('@rollup/plugin-commonjs')
+import { compile } from 'coffeescript'
+import { equal, ok } from 'assert'
+import { readFileSync } from 'fs'
+import { rollup } from 'rollup'
+import coffee from '../dist/rollup-plugin-coffeescript.mjs'
 
 const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'

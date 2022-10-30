@@ -1,6 +1,6 @@
-const { compile } = require('coffeescript')
-const { createFilter } = require('@rollup/pluginutils')
-const { extname } = require('path')
+import { compile } from 'coffeescript'
+import { createFilter } from '@rollup/pluginutils'
+import { extname } from 'path'
 
 const DEFAULTS = {
   bare: true,
@@ -37,4 +37,4 @@ function grind(options) {
   return { transform }
 }
 
-module.exports = grind
+export default grind

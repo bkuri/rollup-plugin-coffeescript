@@ -11,15 +11,15 @@
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.0.1",
+    "@rollup/pluginutils": "^5.0.2",
     "coffeescript": "^2.7.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "del-cli": "^5.0.0",
     "mocha": "^10.1.0",
-    "rollup": "^3.2.1"
+    "rollup": "^3.2.3"
   },
   "files": [
     "dist",
@@ -35,7 +35,7 @@
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",
-    "rollup": "^3.2.1"
+    "rollup": "^3.2.3"
   },
   "publishConfig": {
     "access": "public"

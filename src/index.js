@@ -20,7 +20,7 @@ function buildOptions(ext, base) {
   return lit?.includes(ext) ? { ...base, literate: true } : base
 }
 
-function grind(options) {
+export default function coffee(options) {
   options = { ...DEFAULTS, ...options }
   const { exclude, extensions, include } = options
   const filter = createFilter(include, exclude)
@@ -36,5 +36,3 @@ function grind(options) {
   
   return { transform }
 }
-
-export default grind

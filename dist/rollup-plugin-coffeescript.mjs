@@ -1,8 +1,6 @@
-'use strict';
-
-const { compile } = require('coffeescript');
-const { createFilter } = require('@rollup/pluginutils');
-const { extname } = require('path');
+import { compile } from 'coffeescript';
+import { createFilter } from '@rollup/pluginutils';
+import { extname } from 'path';
 
 const DEFAULTS = {
   bare: true,
@@ -22,7 +20,7 @@ function buildOptions(ext, base) {
   return lit?.includes(ext) ? { ...base, literate: true } : base
 }
 
-function grind(options) {
+function coffee(options) {
   options = { ...DEFAULTS, ...options };
   const { exclude, extensions, include } = options;
   const filter = createFilter(include, exclude);
@@ -39,4 +37,4 @@ function grind(options) {
   return { transform }
 }
 
-module.exports = grind;
+export { coffee as default };

@@ -1,11 +1,8 @@
-const { compile } = require('coffeescript')
-const { equal, ok } = require('assert')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const { readFileSync } = require('fs')
-const { rollup } = require('rollup')
-
-const coffee = require('../src/index.js')
-const commonjs = require('@rollup/plugin-commonjs')
+import { compile } from 'coffeescript'
+import { equal, ok } from 'assert'
+import { readFileSync } from 'fs'
+import { rollup } from 'rollup'
+import coffee from '../dist/rollup-plugin-coffeescript.mjs'
 
 const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'
@@ -35,18 +32,6 @@ describe('@rollup/plugin-coffeescript', function() {
         const { code } = output[0]
         equal(code.trim(), compile(source, { bare: true }).trim())
       })
-  })
-
-  it('only runs code with defined extensions through coffeescript', () => {
-    return test('invalid-coffee.js', coffee(), nodeResolve({ extensions }))
-  })
-
-  it('works with requires when used with commonjs plugin', () => {
-    const input = 'import-class/main.coffee'
-
-    return rollup({ input, plugins: [ coffee(), commonjs({ extensions }) ]})
-      .then(bundle)
-      .then(result => verify(result, 'A$1 = class A'))
   })
 
   it('allows overriding default options', () => {

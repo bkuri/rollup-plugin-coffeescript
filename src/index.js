@@ -4,6 +4,7 @@ import { extname } from 'path'
 
 const DEFAULTS = {
   bare: true,
+  header: false,
   extensions: [ '.coffee', '.litcoffee' ],
   literateExtensions: [ '.litcoffee', '.md' ],
   sourceMap: true

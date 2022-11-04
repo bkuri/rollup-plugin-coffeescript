@@ -7,18 +7,18 @@ specifiers:
   coffeescript: ^2.7.0
   del-cli: ^5.0.0
   mocha: ^10.1.0
-  rollup: ^3.2.3
+  rollup: ^3.2.5
 
 dependencies:
   coffeescript: 2.7.0
 
 devDependencies:
-  '@rollup/plugin-commonjs': registry.npmjs.org/@rollup/plugin-commonjs/23.0.2_rollup@3.2.3
-  '@rollup/plugin-node-resolve': registry.npmjs.org/@rollup/plugin-node-resolve/15.0.1_rollup@3.2.3
-  '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.3
+  '@rollup/plugin-commonjs': registry.npmjs.org/@rollup/plugin-commonjs/23.0.2_rollup@3.2.5
+  '@rollup/plugin-node-resolve': registry.npmjs.org/@rollup/plugin-node-resolve/15.0.1_rollup@3.2.5
+  '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.5
   del-cli: 5.0.0
   mocha: registry.npmjs.org/mocha/10.1.0
-  rollup: registry.npmjs.org/rollup/3.2.3
+  rollup: registry.npmjs.org/rollup/3.2.5
 
 packages:
 
@@ -480,7 +480,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-commonjs/23.0.2_rollup@3.2.3:
+  registry.npmjs.org/@rollup/plugin-commonjs/23.0.2_rollup@3.2.5:
     resolution: {integrity: sha512-e9ThuiRf93YlVxc4qNIurvv+Hp9dnD+4PjOqQs5vAYfcZ3+AXSrcdzXnVjWxcGQOa6KGJFcRZyUI3ktWLavFjg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-23.0.2.tgz}
     id: registry.npmjs.org/@rollup/plugin-commonjs/23.0.2
     name: '@rollup/plugin-commonjs'
@@ -492,16 +492,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.3
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.5
       commondir: registry.npmjs.org/commondir/1.0.1
       estree-walker: registry.npmjs.org/estree-walker/2.0.2
       glob: registry.npmjs.org/glob/8.0.3
       is-reference: registry.npmjs.org/is-reference/1.2.1
       magic-string: registry.npmjs.org/magic-string/0.26.7
-      rollup: registry.npmjs.org/rollup/3.2.3
+      rollup: registry.npmjs.org/rollup/3.2.5
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-node-resolve/15.0.1_rollup@3.2.3:
+  registry.npmjs.org/@rollup/plugin-node-resolve/15.0.1_rollup@3.2.5:
     resolution: {integrity: sha512-ReY88T7JhJjeRVbfCyNj+NXAG3IIsVMsX9b5/9jC98dRP8/yxlZdz7mHZbHk5zHr24wZZICS5AcXsFZAXYUQEg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.0.1.tgz}
     id: registry.npmjs.org/@rollup/plugin-node-resolve/15.0.1
     name: '@rollup/plugin-node-resolve'
@@ -513,16 +513,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.3
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.5
       '@types/resolve': registry.npmjs.org/@types/resolve/1.20.2
       deepmerge: registry.npmjs.org/deepmerge/4.2.2
       is-builtin-module: registry.npmjs.org/is-builtin-module/3.2.0
       is-module: registry.npmjs.org/is-module/1.0.0
       resolve: registry.npmjs.org/resolve/1.22.1
-      rollup: registry.npmjs.org/rollup/3.2.3
+      rollup: registry.npmjs.org/rollup/3.2.5
     dev: true
 
-  registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.3:
+  registry.npmjs.org/@rollup/pluginutils/5.0.2_rollup@3.2.5:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.2.tgz}
     id: registry.npmjs.org/@rollup/pluginutils/5.0.2
     name: '@rollup/pluginutils'
@@ -537,7 +537,7 @@ packages:
       '@types/estree': registry.npmjs.org/@types/estree/1.0.0
       estree-walker: registry.npmjs.org/estree-walker/2.0.2
       picomatch: registry.npmjs.org/picomatch/2.3.1
-      rollup: registry.npmjs.org/rollup/3.2.3
+      rollup: registry.npmjs.org/rollup/3.2.5
     dev: true
 
   registry.npmjs.org/@types/estree/1.0.0:
@@ -1256,10 +1256,10 @@ packages:
       supports-preserve-symlinks-flag: registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0
     dev: true
 
-  registry.npmjs.org/rollup/3.2.3:
-    resolution: {integrity: sha512-qfadtkY5kl0F5e4dXVdj2D+GtOdifasXHFMiL1SMf9ADQDv5Eti6xReef9FKj+iQPR2pvtqWna57s/PjARY4fg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-3.2.3.tgz}
+  registry.npmjs.org/rollup/3.2.5:
+    resolution: {integrity: sha512-/Ha7HhVVofduy+RKWOQJrxe4Qb3xyZo+chcpYiD8SoQa4AG7llhupUtyfKSSrdBM2mWJjhM8wZwmbY23NmlIYw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-3.2.5.tgz}
     name: rollup
-    version: 3.2.3
+    version: 3.2.5
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:

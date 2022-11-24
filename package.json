@@ -30,10 +30,11 @@
   ],
   "keywords": [
     "coffeescript",
+    "module",
+    "npm",
     "rollup",
     "plugin",
-    "npm",
-    "module"
+    "vite"
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",
@@ -43,7 +44,7 @@
     "access": "public"
   },
   "repository": {
-    "url": "bkuri/rollup-plugin-coffeescript"
+    "url": "git://github.com/bkuri/rollup-plugin-coffeescript.git"
   },
   "scripts": {
     "build": "rollup -c",

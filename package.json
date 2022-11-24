@@ -21,7 +21,7 @@
     "@rollup/pluginutils": "^5.0.2",
     "del-cli": "^5.0.0",
     "mocha": "^10.1.0",
-    "rollup": "^3.2.5"
+    "rollup": "^3.4.0"
   },
   "files": [
     "dist",
@@ -37,7 +37,7 @@
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",
-    "rollup": "^3.2.5"
+    "rollup": "^3.4.0"
   },
   "publishConfig": {
     "access": "public"

@@ -6,9 +6,9 @@ var path = require('path');
 
 const DEFAULTS = {
   bare: true,
+  header: false,
   extensions: [ '.coffee', '.litcoffee' ],
-  literateExtensions: [ '.litcoffee', '.md' ],
-  sourceMap: true
+  literateExtensions: [ '.litcoffee', '.md' ]
 };
 
 function buildOptions(ext, base) {
@@ -23,17 +23,15 @@ function buildOptions(ext, base) {
 }
 
 function coffee(options) {
-  options = { ...DEFAULTS, ...options };
+  options = { ...DEFAULTS, ...options, sourceMap: true };
   const { exclude, extensions, include } = options;
   const filter = pluginutils.createFilter(include, exclude);
   
   const transform = (coffee, id) => {
     const ext = path.extname(id);
     if (!filter(id) || !extensions.includes(ext)) return null
-    const { js: code, v3SourceMap } = coffeescript.compile(coffee, buildOptions(ext, options));
-
-    if (v3SourceMap) return { code, map: JSON.parse(v3SourceMap) }
-    return { code }
+    const { js: code, v3SourceMap: map } = coffeescript.compile(coffee, buildOptions(ext, options));
+    return { code, map }
   };
   
   return { transform }

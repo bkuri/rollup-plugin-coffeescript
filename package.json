@@ -30,11 +30,8 @@
   ],
   "keywords": [
     "coffeescript",
-    "module",
-    "npm",
-    "rollup",
-    "plugin",
-    "vite"
+    "rollup-plugin",
+    "vite-plugin"
   ],
   "peerDependencies": {
     "coffeescript": "2.7.0",

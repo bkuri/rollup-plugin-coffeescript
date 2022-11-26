@@ -1,6 +1,6 @@
 # rollup-plugin-coffeescript
 
-![rollup + coffeescript](https://repository-images.githubusercontent.com/513663406/fa56f07a-86ee-4a11-932e-ed1d8016c1de)
+![rollup + coffeescript](https://repository-images.githubusercontent.com/513663406/c38d39b9-8103-45f9-a24e-e389cd5ec6c9)
 
 Modern rollup with coffeescript. Sourced from [lautis/rollup-plugin-coffee-script](https://github.com/lautis/rollup-plugin-coffee-script), refactored and updated libraries.
 

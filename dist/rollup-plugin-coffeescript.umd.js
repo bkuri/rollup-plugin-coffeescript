@@ -17,7 +17,11 @@
 		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 	}
 
-	var picomatch$1 = {exports: {}};
+	var picomatchExports = {};
+	var picomatch$1 = {
+	  get exports(){ return picomatchExports; },
+	  set exports(v){ picomatchExports = v; },
+	};
 
 	var utils$3 = {};
 
@@ -2091,7 +2095,7 @@
 		module.exports = picomatch_1;
 	} (picomatch$1));
 
-	var pm = /*@__PURE__*/getDefaultExportFromCjs(picomatch$1.exports);
+	var pm = /*@__PURE__*/getDefaultExportFromCjs(picomatchExports);
 
 	// Helper since Typescript can't detect readonly arrays with Array.isArray
 	function isArray(arg) {
@@ -2110,7 +2114,7 @@
 	};
 
 	function getMatcherString(id, resolutionBase) {
-	    if (resolutionBase === false || require$$0.isAbsolute(id) || id.startsWith('*')) {
+	    if (resolutionBase === false || require$$0.isAbsolute(id) || id.startsWith('**')) {
 	        return normalizePath(id);
 	    }
 	    // resolve('') is valid and will default to process.cwd()

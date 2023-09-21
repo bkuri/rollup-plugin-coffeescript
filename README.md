@@ -50,8 +50,8 @@ export default {
   input: 'main.coffee',
   plugins: [
     coffee(),
-    nodeResolve({ extensions }),
-    commonjs({ extensions })
+    commonjs({ extensions }),
+    nodeResolve({ extensions })
   ]
 }
 ```

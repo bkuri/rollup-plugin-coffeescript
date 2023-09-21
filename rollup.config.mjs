@@ -2,6 +2,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import nodePolyfills from 'rollup-plugin-polyfill-node'
 import pkg from './package.json' assert { type: 'json' }
+import terser from '@rollup/plugin-terser'
 
 const globals = {
   coffeescript: 'coffeescript',
@@ -18,7 +19,8 @@ export default [
       { file: pkg.module, format: 'esm' }
     ],
     plugins: [
-      nodeResolve({ resolveOnly: [ '@rollup/pluginutils' ] })
+      nodeResolve({ resolveOnly: [ '@rollup/pluginutils' ] }),
+      terser()
     ]
   },
   {
@@ -29,7 +31,8 @@ export default [
     plugins: [
       commonjs(),
       nodePolyfills({ include: [ 'path' ] }),
-      nodeResolve()
+      nodeResolve(),
+      terser()
     ]
   }
 ]

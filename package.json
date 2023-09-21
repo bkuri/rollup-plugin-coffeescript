@@ -49,15 +49,15 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "del-cli dist",
-    "ci:coverage": "nyc pnpm test && nyc report --reporter=text-lcov > coverage.lcov",
-    "ci:lint": "pnpm build && pnpm lint",
+    "ci:coverage": "nyc yarn test && nyc report --reporter=text-lcov > coverage.lcov",
+    "ci:lint": "yarn build && yarn lint",
     "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
-    "ci:test": "pnpm test -- --verbose",
-    "prebuild": "pnpm clean",
-    "prepare": "pnpm build",
-    "prerelease": "pnpm build",
-    "pretest": "pnpm build",
-    "release": "pnpm plugin:release --workspace-root -- --pkg $npm_package_name",
+    "ci:test": "yarn test -- --verbose",
+    "prebuild": "yarn clean",
+    "prepare": "yarn build",
+    "prerelease": "yarn build",
+    "pretest": "yarn build",
+    "release": "yarn plugin:release --workspace-root -- --pkg $npm_package_name",
     "test": "mocha"
   }
 }

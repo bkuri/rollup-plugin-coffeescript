@@ -1,8 +1,8 @@
-*.log
-npm-debug.log*
 /dist
-node_modules
-.npm
+*.log
 .node_repl_history
-yarn.lock
+.npm
+npm-debug.log*
+node_modules
 package-lock.json
+pnpm-lock.yaml

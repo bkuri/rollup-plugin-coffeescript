@@ -55,7 +55,6 @@
     "ci:test": "yarn test --verbose",
     "prebuild": "yarn clean",
     "prepare": "yarn build",
-    "prerelease": "yarn build",
     "pretest": "yarn build",
     "test": "mocha"
   }

@@ -9,14 +9,14 @@ const DEFAULTS = {
 }
 
 function buildOptions(ext, base) {
-  const { literateExtensions: lit } = base
+  const { literateExtensions } = base
 
   delete base.exclude
   delete base.extensions
   delete base.include
   delete base.literateExtensions
 
-  return lit?.includes(ext) ? { ...base, literate: true } : base
+  return literateExtensions?.includes(ext) ? { ...base, literate: true } : base
 }
 
 export default function coffee(options) {

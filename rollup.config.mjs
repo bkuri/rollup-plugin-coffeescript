@@ -11,13 +11,14 @@ const extensions = [
 ]
 
 const globals = {
+  '@rollup/pluginutils': 'pluginutils',
   coffeescript: 'coffeescript',
   picomatch: 'pm'
 }
 
 const resolveParams = {
   extensions,
-  resolveOnly: [ '@rollup/pluginutils' ]
+  resolveOnly: [ 'pm' ]
 }
 
 export default [

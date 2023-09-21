@@ -8,7 +8,7 @@
   "module": "dist/rollup-plugin-coffeescript.min.mjs",
   "name": "@bkuri/rollup-plugin-coffeescript",
   "type": "module",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "bugs": {
     "url": "https://github.com/bkuri/rollup-plugin-coffeescript/issues"
   },
@@ -52,12 +52,11 @@
     "ci:coverage": "nyc yarn test && nyc report --reporter=text-lcov > coverage.lcov",
     "ci:lint": "yarn build && yarn lint",
     "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
-    "ci:test": "yarn test -- --verbose",
+    "ci:test": "yarn test --verbose",
     "prebuild": "yarn clean",
     "prepare": "yarn build",
     "prerelease": "yarn build",
     "pretest": "yarn build",
-    "release": "yarn plugin:release --workspace-root -- --pkg $npm_package_name",
     "test": "mocha"
   }
 }

@@ -11,23 +11,26 @@ dependencies:
 
 devDependencies:
   '@rollup/plugin-commonjs':
-    specifier: ^23.0.7
-    version: registry.npmjs.org/@rollup/plugin-commonjs@23.0.7(rollup@3.28.1)
+    specifier: ^25.0.4
+    version: registry.npmjs.org/@rollup/plugin-commonjs@25.0.4(rollup@3.29.2)
   '@rollup/plugin-node-resolve':
     specifier: ^15.2.1
-    version: registry.npmjs.org/@rollup/plugin-node-resolve@15.2.1(rollup@3.28.1)
+    version: registry.npmjs.org/@rollup/plugin-node-resolve@15.2.1(rollup@3.29.2)
   '@rollup/pluginutils':
     specifier: ^5.0.4
-    version: registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.28.1)
+    version: registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.29.2)
   del-cli:
-    specifier: ^5.0.1
-    version: registry.npmjs.org/del-cli@5.0.1
+    specifier: ^5.1.0
+    version: registry.npmjs.org/del-cli@5.1.0
   mocha:
     specifier: ^10.2.0
     version: registry.npmjs.org/mocha@10.2.0
   rollup:
-    specifier: ^3.28.1
-    version: registry.npmjs.org/rollup@3.28.1
+    specifier: ^3.29.2
+    version: registry.npmjs.org/rollup@3.29.2
+  rollup-plugin-polyfill-node:
+    specifier: ^0.12.0
+    version: registry.npmjs.org/rollup-plugin-polyfill-node@0.12.0(rollup@3.29.2)
 
 packages:
 
@@ -41,10 +44,10 @@ packages:
       chalk: registry.npmjs.org/chalk@2.4.2
     dev: true
 
-  registry.npmjs.org/@babel/helper-validator-identifier@7.22.5:
-    resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.5.tgz}
+  registry.npmjs.org/@babel/helper-validator-identifier@7.22.19:
+    resolution: {integrity: sha512-Tinq7ybnEPFFXhlYOYFiSjespWQk0dq2dRNAiMdRTOYQzEGqnnNyrTxPYHP5r6wGjlF1rFgABdDV0g8EwD6Qbg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.19.tgz}
     name: '@babel/helper-validator-identifier'
-    version: 7.22.5
+    version: 7.22.19
     engines: {node: '>=6.9.0'}
     dev: true
 
@@ -54,7 +57,7 @@ packages:
     version: 7.22.13
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-validator-identifier': registry.npmjs.org/@babel/helper-validator-identifier@7.22.5
+      '@babel/helper-validator-identifier': registry.npmjs.org/@babel/helper-validator-identifier@7.22.19
       chalk: registry.npmjs.org/chalk@2.4.2
       js-tokens: registry.npmjs.org/js-tokens@4.0.0
     dev: true
@@ -92,11 +95,11 @@ packages:
       fastq: registry.npmjs.org/fastq@1.15.0
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-commonjs@23.0.7(rollup@3.28.1):
-    resolution: {integrity: sha512-hsSD5Qzyuat/swzrExGG5l7EuIlPhwTsT7KwKbSCQzIcJWjRxiimi/0tyMYY2bByitNb3i1p+6JWEDGa0NvT0Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-23.0.7.tgz}
-    id: registry.npmjs.org/@rollup/plugin-commonjs/23.0.7
+  registry.npmjs.org/@rollup/plugin-commonjs@25.0.4(rollup@3.29.2):
+    resolution: {integrity: sha512-L92Vz9WUZXDnlQQl3EwbypJR4+DM2EbsO+/KOcEkP4Mc6Ct453EeDB2uH9lgRwj4w5yflgNpq9pHOiY8aoUXBQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-25.0.4.tgz}
+    id: registry.npmjs.org/@rollup/plugin-commonjs/25.0.4
     name: '@rollup/plugin-commonjs'
-    version: 23.0.7
+    version: 25.0.4
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -104,16 +107,34 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.28.1)
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.29.2)
       commondir: registry.npmjs.org/commondir@1.0.1
       estree-walker: registry.npmjs.org/estree-walker@2.0.2
       glob: registry.npmjs.org/glob@8.1.0
       is-reference: registry.npmjs.org/is-reference@1.2.1
       magic-string: registry.npmjs.org/magic-string@0.27.0
-      rollup: registry.npmjs.org/rollup@3.28.1
+      rollup: registry.npmjs.org/rollup@3.29.2
     dev: true
 
-  registry.npmjs.org/@rollup/plugin-node-resolve@15.2.1(rollup@3.28.1):
+  registry.npmjs.org/@rollup/plugin-inject@5.0.3(rollup@3.29.2):
+    resolution: {integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-inject/-/plugin-inject-5.0.3.tgz}
+    id: registry.npmjs.org/@rollup/plugin-inject/5.0.3
+    name: '@rollup/plugin-inject'
+    version: 5.0.3
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.29.2)
+      estree-walker: registry.npmjs.org/estree-walker@2.0.2
+      magic-string: registry.npmjs.org/magic-string@0.27.0
+      rollup: registry.npmjs.org/rollup@3.29.2
+    dev: true
+
+  registry.npmjs.org/@rollup/plugin-node-resolve@15.2.1(rollup@3.29.2):
     resolution: {integrity: sha512-nsbUg588+GDSu8/NS8T4UAshO6xeaOfINNuXeVHcKV02LJtoRaM1SiOacClw4kws1SFiNhdLGxlbMY9ga/zs/w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.2.1.tgz}
     id: registry.npmjs.org/@rollup/plugin-node-resolve/15.2.1
     name: '@rollup/plugin-node-resolve'
@@ -125,16 +146,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.28.1)
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.29.2)
       '@types/resolve': registry.npmjs.org/@types/resolve@1.20.2
       deepmerge: registry.npmjs.org/deepmerge@4.3.1
       is-builtin-module: registry.npmjs.org/is-builtin-module@3.2.1
       is-module: registry.npmjs.org/is-module@1.0.0
-      resolve: registry.npmjs.org/resolve@1.22.4
-      rollup: registry.npmjs.org/rollup@3.28.1
+      resolve: registry.npmjs.org/resolve@1.22.6
+      rollup: registry.npmjs.org/rollup@3.29.2
     dev: true
 
-  registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.28.1):
+  registry.npmjs.org/@rollup/pluginutils@5.0.4(rollup@3.29.2):
     resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.4.tgz}
     id: registry.npmjs.org/@rollup/pluginutils/5.0.4
     name: '@rollup/pluginutils'
@@ -149,7 +170,7 @@ packages:
       '@types/estree': registry.npmjs.org/@types/estree@1.0.1
       estree-walker: registry.npmjs.org/estree-walker@2.0.2
       picomatch: registry.npmjs.org/picomatch@2.3.1
-      rollup: registry.npmjs.org/rollup@3.28.1
+      rollup: registry.npmjs.org/rollup@3.29.2
     dev: true
 
   registry.npmjs.org/@types/estree@1.0.1:
@@ -472,21 +493,21 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  registry.npmjs.org/del-cli@5.0.1:
-    resolution: {integrity: sha512-hCDHJd0u0jKFqizgInYXZaILsqOIA7Zl6e7M3hJwP+SlwUAgtV/EB22EPF4e2+9VAVnBDQQBE6tDRe+/UuoFhg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/del-cli/-/del-cli-5.0.1.tgz}
+  registry.npmjs.org/del-cli@5.1.0:
+    resolution: {integrity: sha512-xwMeh2acluWeccsfzE7VLsG3yTr7nWikbfw+xhMnpRrF15pGSkw+3/vJZWlGoE4I86UiLRNHicmKt4tkIX9Jtg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/del-cli/-/del-cli-5.1.0.tgz}
     name: del-cli
-    version: 5.0.1
+    version: 5.1.0
     engines: {node: '>=14.16'}
     hasBin: true
     dependencies:
-      del: registry.npmjs.org/del@7.0.0
+      del: registry.npmjs.org/del@7.1.0
       meow: registry.npmjs.org/meow@10.1.5
     dev: true
 
-  registry.npmjs.org/del@7.0.0:
-    resolution: {integrity: sha512-tQbV/4u5WVB8HMJr08pgw0b6nG4RGt/tj+7Numvq+zqcvUFeMaIWWOUFltiU+6go8BSO2/ogsB4EasDaj0y68Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/del/-/del-7.0.0.tgz}
+  registry.npmjs.org/del@7.1.0:
+    resolution: {integrity: sha512-v2KyNk7efxhlyHpjEvfyxaAihKKK0nWCuf6ZtqZcFFpQRG0bJ12Qsr0RpvsICMjAAZ8DOVCxrlqpxISlMHC4Kg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/del/-/del-7.1.0.tgz}
     name: del
-    version: 7.0.0
+    version: 7.1.0
     engines: {node: '>=14.16'}
     dependencies:
       globby: registry.npmjs.org/globby@13.2.2
@@ -683,7 +704,7 @@ packages:
       fs.realpath: registry.npmjs.org/fs.realpath@1.0.0
       inflight: registry.npmjs.org/inflight@1.0.6
       inherits: registry.npmjs.org/inherits@2.0.4
-      minimatch: registry.npmjs.org/minimatch@5.1.6
+      minimatch: registry.npmjs.org/minimatch@5.0.1
       once: registry.npmjs.org/once@1.4.0
     dev: true
 
@@ -1038,15 +1059,6 @@ packages:
       brace-expansion: registry.npmjs.org/brace-expansion@2.0.1
     dev: true
 
-  registry.npmjs.org/minimatch@5.1.6:
-    resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/minimatch/-/minimatch-5.1.6.tgz}
-    name: minimatch
-    version: 5.1.6
-    engines: {node: '>=10'}
-    dependencies:
-      brace-expansion: registry.npmjs.org/brace-expansion@2.0.1
-    dev: true
-
   registry.npmjs.org/minimist-options@4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/minimist-options/-/minimist-options-4.1.0.tgz}
     name: minimist-options
@@ -1278,10 +1290,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  registry.npmjs.org/resolve@1.22.4:
-    resolution: {integrity: sha512-PXNdCiPqDqeUou+w1C2eTQbNfxKSuMxqTCuvlmmMsk1NWHL5fRrhY6Pl0qEYYc6+QqGClco1Qj8XnjPego4wfg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/resolve/-/resolve-1.22.4.tgz}
+  registry.npmjs.org/resolve@1.22.6:
+    resolution: {integrity: sha512-njhxM7mV12JfufShqGy3Rz8j11RPdLy4xi15UurGJeoHLfJpVXKdh3ueuOqbYUcDZnffr6X739JBo5LzyahEsw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/resolve/-/resolve-1.22.6.tgz}
     name: resolve
-    version: 1.22.4
+    version: 1.22.6
     hasBin: true
     dependencies:
       is-core-module: registry.npmjs.org/is-core-module@2.13.0
@@ -1305,10 +1317,22 @@ packages:
       glob: registry.npmjs.org/glob@7.2.3
     dev: true
 
-  registry.npmjs.org/rollup@3.28.1:
-    resolution: {integrity: sha512-R9OMQmIHJm9znrU3m3cpE8uhN0fGdXiawME7aZIpQqvpS/85+Vt1Hq1/yVIcYfOmaQiHjvXkQAoJukvLpau6Yw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-3.28.1.tgz}
+  registry.npmjs.org/rollup-plugin-polyfill-node@0.12.0(rollup@3.29.2):
+    resolution: {integrity: sha512-PWEVfDxLEKt8JX1nZ0NkUAgXpkZMTb85rO/Ru9AQ69wYW8VUCfDgP4CGRXXWYni5wDF0vIeR1UoF3Jmw/Lt3Ug==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup-plugin-polyfill-node/-/rollup-plugin-polyfill-node-0.12.0.tgz}
+    id: registry.npmjs.org/rollup-plugin-polyfill-node/0.12.0
+    name: rollup-plugin-polyfill-node
+    version: 0.12.0
+    peerDependencies:
+      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
+    dependencies:
+      '@rollup/plugin-inject': registry.npmjs.org/@rollup/plugin-inject@5.0.3(rollup@3.29.2)
+      rollup: registry.npmjs.org/rollup@3.29.2
+    dev: true
+
+  registry.npmjs.org/rollup@3.29.2:
+    resolution: {integrity: sha512-CJouHoZ27v6siztc21eEQGo0kIcE5D1gVPA571ez0mMYb25LGYGKnVNXpEj5MGlepmDWGXNjDB5q7uNiPHC11A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-3.29.2.tgz}
     name: rollup
-    version: 3.28.1
+    version: 3.29.2
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:

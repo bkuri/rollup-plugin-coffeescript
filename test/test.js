@@ -12,7 +12,7 @@ const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'
 
 const bundle = ({ generate }) => generate(OPTIONS)
-const extensions = [ '.coffee', '.js' ]
+const extensions = [ '.coffee', '.js', '.litcoffee', '.md' ]
 const test = (input, ...plugins) => rollup({ input, plugins }).then(bundle).then(verify)
 
 function verify ({ output }, result=RESULT) {

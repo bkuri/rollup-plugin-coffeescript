@@ -3,8 +3,10 @@ import { equal, ok } from 'assert'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { readFileSync } from 'fs'
 import { rollup } from 'rollup'
+
 import coffee from '../dist/rollup-plugin-coffeescript.mjs'
 import commonjs from '@rollup/plugin-commonjs'
+import pkg from '../package.json' assert { type: 'json' }
 
 const OPTIONS = { format: 'es' }
 const RESULT = 'answer = 42'
@@ -21,7 +23,7 @@ function verify ({ output }, result=RESULT) {
 // change current path
 process.chdir('test/sample')
 
-describe('@rollup/plugin-coffeescript', function() {
+describe(pkg.name, function() {
   this.timeout(5000)
 
   it('runs code through coffeescript', () => {

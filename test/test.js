@@ -4,7 +4,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { readFileSync } from 'fs'
 import { rollup } from 'rollup'
 
-import coffee from '../dist/rollup-plugin-coffeescript.mjs'
+import coffee from '../dist/rollup-plugin-coffeescript.min.mjs'
 import commonjs from '@rollup/plugin-commonjs'
 import pkg from '../package.json' assert { type: 'json' }
 

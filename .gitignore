@@ -1,5 +1,6 @@
 *.log
 npm-debug.log*
+/dist
 node_modules
 .npm
 .node_repl_history

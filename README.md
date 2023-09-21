@@ -15,7 +15,7 @@ npm install --save-dev @bkuri/rollup-plugin-coffeescript
 # or
 yarn add -D @bkuri/rollup-plugin-coffeescript
 # or
-pnpm add -D @bkuri/rollup-plugin-coffeescript
+pnpm install -D @bkuri/rollup-plugin-coffeescript
 ```
 
 ## Usage

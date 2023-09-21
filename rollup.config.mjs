@@ -6,7 +6,8 @@ import terser from '@rollup/plugin-terser'
 const extensions = [
   '.coffee',
   '.js',
-  '.litcoffee'
+  '.litcoffee',
+  '.md'
 ]
 
 const globals = {

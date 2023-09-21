@@ -46,11 +46,12 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "clean": "del-cli dist",
     "ci:coverage": "nyc pnpm test && nyc report --reporter=text-lcov > coverage.lcov",
     "ci:lint": "pnpm build && pnpm lint",
     "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
     "ci:test": "pnpm test -- --verbose",
-    "prebuild": "del-cli dist",
+    "prebuild": "pnpm clean",
     "prepare": "pnpm build",
     "prerelease": "pnpm build",
     "pretest": "pnpm build",

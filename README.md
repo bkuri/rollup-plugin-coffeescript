@@ -33,3 +33,25 @@ export default {
 ```
 
 CoffeeScript plugin accepts `options.include` and `options.exclude` (each a minimatch pattern, or array of minimatch  patterns) to determine which files are compiled by CoffeeScript. By default, all files are transpiled.
+
+## Integration with CommonJS modules
+
+The CoffeeScript plugin doesn't resolve requires. Instead,
+use `rollup-plugin-commonjs` and add `.coffee` (and optionally `.litcoffee` and `.md`) to `extensions`.
+
+```js
+import coffee from '@bkuri/rollup-plugin-coffeescript'
+import commonjs from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
+
+const extensions = [ '.coffee', '.js', '.litcoffee', '.md' ]
+
+export default {
+  input: 'main.coffee',
+  plugins: [
+    coffee(),
+    nodeResolve({ extensions }),
+    commonjs({ extensions })
+  ]
+}
+```

@@ -55,3 +55,7 @@ export default {
   ]
 }
 ```
+
+## License
+
+### MIT © [Bernardo Kuri](mailto:github+rollup-plugin-coffeescript@bkuri.com)

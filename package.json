@@ -1,5 +1,5 @@
 {
-  "author": "Bernardo Kuri",
+  "author": "Bernardo Kuri <github+rollup-plugin-coffeescript@bkuri.com>",
   "browser": "dist/rollup-plugin-coffeescript.umd.min.js",
   "description": "Modern CoffeeScript support for Rollup.",
   "homepage": "https://github.com/bkuri/rollup-plugin-coffeescript",
